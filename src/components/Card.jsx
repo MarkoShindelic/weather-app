@@ -29,7 +29,7 @@ function Card(){
             setCondition(data.current.condition.text);
             setImg(data.current.condition.icon);
             console.log(data);
-            console.logt(data.current.temp_c);
+            console.log(data.current.temp_c);
         });
     }
 
@@ -52,7 +52,7 @@ function Card(){
             <h2>Weather App</h2>
             <input name="city" type='text' placeholder='Enter city' value = {value} onChange={inputChange} />
             <hr className='line'/>
-           {temp ? ( <p>Temperature: <em className='response'> {temp}°C</em></p>) : <p>Temperature: </p>}
+           {temp != null ? ( <p>Temperature: <em className='response'> {temp}°C</em></p>) : <p>Temperature: </p>}
             <p>Weather: <em className='response'>{condition}</em></p>
     
         <div className='button-container'>
