@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import axios from 'axios';
+//import axios from 'axios';
 import './card.css';
 
 function Card(){
@@ -9,8 +9,9 @@ function Card(){
     const [img, setImg] = useState();
 
 
-    let key = "72f27effc36e4eb1b33191333231811";
-    let baseURL = "http://api.weatherapi.com/v1";
+    /*let key = "72f27effc36e4eb1b33191333231811";
+    let baseURL = "http://api.weatherapi.com/v1";*/
+
     let URL = "http://api.weatherapi.com/v1/current.json?key=72f27effc36e4eb1b33191333231811&q="+ value +"&aqi=no"
     let imgLink = img;
     
@@ -20,7 +21,16 @@ function Card(){
 
     const [temp, setTemp] = useState();
 
-    const onClick = () => {
+    const onClick = () =>{
+        fetch(URL).then(res => res.json()).
+        then(data => {
+            setTemp(data.current.temp_c);
+            setCondition(data.current.condition.text);
+            setImg(data.current.condition.icon);
+        });
+    }
+
+    /*const onClick = () => {
        
         axios.get(URL)
         .then(res => {
@@ -31,7 +41,7 @@ function Card(){
         }).catch(err => {
             console.log(err);
         })
-    }
+    }*/
 
     return(
         <>
