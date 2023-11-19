@@ -1,5 +1,5 @@
 import { useState} from 'react';
-import axios from 'axios';
+import axios from 'redaxios';
 import './card.css';
 
 function Card(){
