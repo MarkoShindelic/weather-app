@@ -23,7 +23,7 @@ function Card(){
     const [temp, setTemp] = useState();
 
     const onClick = () =>{
-        fetch(URL2).then(res => res.json()).
+        fetch(URL).then(res => res.json()).
         then(data => {
             setTemp(data.current.temp_c);
             setCondition(data.current.condition.text);
