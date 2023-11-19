@@ -12,9 +12,9 @@ function Card(){
     /*let key = "72f27effc36e4eb1b33191333231811";
     let baseURL = "http://api.weatherapi.com/v1";*/
 
-    let URL = "https://api.weatherapi.com/v1/current.json?key=72f27effc36e4eb1b33191333231811&q="+ value +"&aqi=no"
+    //let URL = "http://api.weatherapi.com/v1/current.json?key=72f27effc36e4eb1b33191333231811&q="+ value +"&aqi=no"
     let imgLink = img;
-    let URL2 = "https://api.weatherapi.com/v1/current.json?key=72f27effc36e4eb1b33191333231811&q="+ value + "&aqi=no"
+    let URL = "https://api.weatherapi.com/v1/current.json?key=72f27effc36e4eb1b33191333231811&q="+ value + "&aqi=no"
     
     const inputChange = event =>{
         setValue(event.target.value)  
@@ -28,6 +28,8 @@ function Card(){
             setTemp(data.current.temp_c);
             setCondition(data.current.condition.text);
             setImg(data.current.condition.icon);
+            console.log(data);
+            console.logt(data.current.temp_c);
         });
     }
 
