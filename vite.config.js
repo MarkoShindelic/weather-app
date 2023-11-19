@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/weather-app/",
   build: {
     rollupOptions:{
-      external :['axios']
+      external :['redaxios']
     }
   }
 })
