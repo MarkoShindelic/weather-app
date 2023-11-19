@@ -14,6 +14,7 @@ function Card(){
 
     let URL = "https://api.weatherapi.com/v1/current.json?key=72f27effc36e4eb1b33191333231811&q="+ value +"&aqi=no"
     let imgLink = img;
+    let URL2 = "https://api.weatherapi.com/v1/current.json?key=72f27effc36e4eb1b33191333231811&q="+ value + "&aqi=no"
     
     const inputChange = event =>{
         setValue(event.target.value)  
@@ -22,7 +23,7 @@ function Card(){
     const [temp, setTemp] = useState();
 
     const onClick = () =>{
-        fetch(URL).then(res => res.json()).
+        fetch(URL2).then(res => res.json()).
         then(data => {
             setTemp(data.current.temp_c);
             setCondition(data.current.condition.text);
