@@ -12,7 +12,7 @@ function Card(){
     /*let key = "72f27effc36e4eb1b33191333231811";
     let baseURL = "http://api.weatherapi.com/v1";*/
 
-    let URL = "http://api.weatherapi.com/v1/current.json?key=72f27effc36e4eb1b33191333231811&q="+ value +"&aqi=no"
+    let URL = "https://api.weatherapi.com/v1/current.json?key=72f27effc36e4eb1b33191333231811&q="+ value +"&aqi=no"
     let imgLink = img;
     
     const inputChange = event =>{
