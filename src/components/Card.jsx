@@ -6,6 +6,7 @@ function Card(){
 
     const [value, setValue] = useState('');
     const [condition, setCondition] = useState();
+    const [country, setCountry] = useState();
     const [img, setImg] = useState();
 
 
@@ -28,8 +29,8 @@ function Card(){
             setTemp(data.current.temp_c);
             setCondition(data.current.condition.text);
             setImg(data.current.condition.icon);
+            setCountry(data.location.country)
             console.log(data);
-            console.log(data.current.temp_c);
         });
     }
 
@@ -52,9 +53,9 @@ function Card(){
             <h2>Weather App</h2>
             <input name="city" type='text' placeholder='Enter city' value = {value} onChange={inputChange} />
             <hr className='line'/>
+            <p>Country: <em className='response'>{country}</em></p>
            {temp != null ? ( <p>Temperature: <em className='response'> {temp}°C</em></p>) : <p>Temperature: </p>}
             <p>Weather: <em className='response'>{condition}</em></p>
-    
         <div className='button-container'>
             <img src={imgLink} className='img' /> 
             <button onClick={onClick}>Get Weather</button>
